@@ -17,7 +17,9 @@ export default App = () => {
         controls={true}
         style={{height: 200, width:200}}
         muted={isMuted}
-        gainAudioFocus={isMuted ? false: true}
+        ignoreSilentSwitch={isMuted ? 'obey' : 'ignore'}
+        mixWithOthers={isMuted ? 'mix' : 'inherit'}
+        gainAudioFocus={isMuted ? false : true}
       />
       <Button
         onPress={() => setIsPlaying(p => !p)}

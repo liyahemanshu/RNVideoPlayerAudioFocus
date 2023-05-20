@@ -1,3 +1,15 @@
+diff --git a/node_modules/react-native-video/Video.js b/node_modules/react-native-video/Video.js
+index a3452ad..54dc957 100644
+--- a/node_modules/react-native-video/Video.js
++++ b/node_modules/react-native-video/Video.js
+@@ -455,6 +455,7 @@ Video.propTypes = {
+   ),
+   paused: PropTypes.bool,
+   muted: PropTypes.bool,
++  gainAudioFocus: PropTypes.bool,
+   volume: PropTypes.number,
+   bufferConfig: PropTypes.shape({
+     minBufferMs: PropTypes.number,
 diff --git a/node_modules/react-native-video/android/build/.transforms/bfcefbc9087f5884cd7e24a09ae0a6c7/results.bin b/node_modules/react-native-video/android/build/.transforms/bfcefbc9087f5884cd7e24a09ae0a6c7/results.bin
 new file mode 100644
 index 0000000..0d259dd
@@ -7,7 +19,7 @@ index 0000000..0d259dd
 +o/classes
 diff --git a/node_modules/react-native-video/android/build/.transforms/bfcefbc9087f5884cd7e24a09ae0a6c7/transformed/classes/classes.dex b/node_modules/react-native-video/android/build/.transforms/bfcefbc9087f5884cd7e24a09ae0a6c7/transformed/classes/classes.dex
 new file mode 100644
-index 0000000..d27b420
+index 0000000..c41e629
 Binary files /dev/null and b/node_modules/react-native-video/android/build/.transforms/bfcefbc9087f5884cd7e24a09ae0a6c7/transformed/classes/classes.dex differ
 diff --git a/node_modules/react-native-video/android/build/generated/source/buildConfig/debug/com/brentvatne/react/BuildConfig.java b/node_modules/react-native-video/android/build/generated/source/buildConfig/debug/com/brentvatne/react/BuildConfig.java
 new file mode 100644
@@ -86,7 +98,7 @@ index 0000000..9e26dfe
 \ No newline at end of file
 diff --git a/node_modules/react-native-video/android/build/intermediates/compile_library_classes_jar/debug/classes.jar b/node_modules/react-native-video/android/build/intermediates/compile_library_classes_jar/debug/classes.jar
 new file mode 100644
-index 0000000..bee1dc6
+index 0000000..29f88da
 Binary files /dev/null and b/node_modules/react-native-video/android/build/intermediates/compile_library_classes_jar/debug/classes.jar differ
 diff --git a/node_modules/react-native-video/android/build/intermediates/compile_r_class_jar/debug/R.jar b/node_modules/react-native-video/android/build/intermediates/compile_r_class_jar/debug/R.jar
 new file mode 100644
@@ -2127,11 +2139,11 @@ index 0000000..7600f98
 +int xml rn_dev_preferences 0x0
 diff --git a/node_modules/react-native-video/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties b/node_modules/react-native-video/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
 new file mode 100644
-index 0000000..1d42b13
+index 0000000..d3d8b1a
 --- /dev/null
 +++ b/node_modules/react-native-video/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
 @@ -0,0 +1 @@
-+#Sat May 20 16:36:46 IST 2023
++#Sat May 20 17:41:56 IST 2023
 diff --git a/node_modules/react-native-video/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml b/node_modules/react-native-video/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
 new file mode 100644
 index 0000000..b61808a
@@ -2198,11 +2210,11 @@ index 0000000..57bb924
 Binary files /dev/null and b/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$1.class differ
 diff --git a/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$2.class b/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$2.class
 new file mode 100644
-index 0000000..527fe3b
+index 0000000..0fc4432
 Binary files /dev/null and b/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$2.class differ
 diff --git a/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$3.class b/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$3.class
 new file mode 100644
-index 0000000..b5c4c33
+index 0000000..899cae9
 Binary files /dev/null and b/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$3.class differ
 diff --git a/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$Events.class b/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$Events.class
 new file mode 100644
@@ -2210,11 +2222,11 @@ index 0000000..416c6b2
 Binary files /dev/null and b/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$Events.class differ
 diff --git a/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$TimedMetaDataAvailableListener.class b/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$TimedMetaDataAvailableListener.class
 new file mode 100644
-index 0000000..7aabfca
+index 0000000..82530f0
 Binary files /dev/null and b/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView$TimedMetaDataAvailableListener.class differ
 diff --git a/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView.class b/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView.class
 new file mode 100644
-index 0000000..07951e9
+index 0000000..63df6c0
 Binary files /dev/null and b/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoView.class differ
 diff --git a/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoViewManager.class b/node_modules/react-native-video/android/build/intermediates/javac/debug/classes/com/brentvatne/react/ReactVideoViewManager.class
 new file mode 100644
@@ -2296,7 +2308,7 @@ index 0000000..0406726
 \ No newline at end of file
 diff --git a/node_modules/react-native-video/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar b/node_modules/react-native-video/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar
 new file mode 100644
-index 0000000..fb1e412
+index 0000000..8dcd8dd
 Binary files /dev/null and b/node_modules/react-native-video/android/build/intermediates/runtime_library_classes_jar/debug/classes.jar differ
 diff --git a/node_modules/react-native-video/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt b/node_modules/react-native-video/android/build/intermediates/symbol_list_with_package_name/debug/package-aware-r.txt
 new file mode 100644
@@ -3847,12 +3859,11 @@ index 0000000..17ef177
 +		INJECTED from /Users/hemanshuliya/Documents/demo/VideoPlayerDemo/node_modules/react-native-video/android/src/main/AndroidManifest.xml
 diff --git a/node_modules/react-native-video/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin b/node_modules/react-native-video/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin
 new file mode 100644
-index 0000000..328b0bc
+index 0000000..d1178f6
 Binary files /dev/null and b/node_modules/react-native-video/android/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin differ
 diff --git a/node_modules/react-native-video/android/src/main/java/com/brentvatne/.DS_Store b/node_modules/react-native-video/android/src/main/java/com/brentvatne/.DS_Store
 new file mode 100644
-index 0000000..c214c40
-Binary files /dev/null and b/node_modules/react-native-video/android/src/main/java/com/brentvatne/.DS_Store differ
+index 0000000..e69de29
 diff --git a/node_modules/react-native-video/android/src/main/java/com/brentvatne/react/ReactVideoView.java b/node_modules/react-native-video/android/src/main/java/com/brentvatne/react/ReactVideoView.java
 index f3f5fe7..735b9f6 100644
 --- a/node_modules/react-native-video/android/src/main/java/com/brentvatne/react/ReactVideoView.java
